@@ -1,0 +1,10 @@
+{
+  "description": "A trusted marketplace for customers to find and book verified photography and event professionals, manage projects and payments, and review and receive media securely.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

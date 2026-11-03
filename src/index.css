@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap');
+@import 'tailwindcss';
+
+/*
+  NICASO design tokens.
+  White canvas, lavender-tinted surfaces, purple reserved for actions, progress
+  and the single "next step" card. Colours come from the NICASO logo gradient.
+*/
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --color-ink: #17122b;
+  --color-ink-2: #575172;
+  --color-ink-3: #8b86a3;
+  --color-line: #e8e3f2;
+  --color-line-2: #d8d0eb;
+  --color-tint: #f7f5fd;
+  --color-tint-2: #efe9fb;
+  --color-lilac: #fbf9ff;
+  --color-lilac-line: #cbb8f5;
+  --color-mist: #f1f0f5;
+
+  --color-brand: #7b2ff2;
+  --color-brand-dark: #5c1fc8;
+  --color-brand-ink: #4a17a6;
+  --color-brand-soft: #e5dcf8;
+  --color-pink: #e0559c;
+  --color-night: #1c1235;
+  --color-night-text: #d9cff7;
+  --color-night-muted: #a79bcc;
+
+  --color-ok: #0e7a54;
+  --color-ok-bg: #e5f5ee;
+  --color-ok-ink: #075a3d;
+  --color-warn: #995a00;
+  --color-warn-bg: #fdf0dc;
+  --color-warn-ink: #6e4100;
+  --color-bad: #c02a48;
+  --color-bad-bg: #fde7ec;
+  --color-bad-ink: #7a1328;
+  --color-star: #f0a020;
+
+  --shadow-card: 0 1px 2px rgb(40 20 90 / 0.05), 0 8px 24px rgb(40 20 90 / 0.07);
+  --shadow-float: 0 2px 6px rgb(40 20 90 / 0.08), 0 24px 60px rgb(60 20 140 / 0.16);
+  --shadow-brand: 0 6px 16px rgb(123 47 242 / 0.26);
+  --shadow-next: 0 14px 36px rgb(123 47 242 / 0.25);
+}
+
+@utility bg-brand-gradient {
+  background-image: linear-gradient(120deg, #6624e6 0%, #9b33ee 55%, #cf4fd9 100%);
+}
+
+@utility text-brand-gradient {
+  background-image: linear-gradient(120deg, #6624e6 0%, #9b33ee 55%, #cf4fd9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: #fff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  button,
+  [role='button'] {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  :focus-visible {
+    outline: 3px solid rgb(123 47 242 / 0.4);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
